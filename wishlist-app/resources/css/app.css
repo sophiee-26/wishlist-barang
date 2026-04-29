@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse-slow {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(79, 70, 229, 0.3), 0 0 10px rgba(79, 70, 229, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 15px rgba(79, 70, 229, 0.6), 0 0 30px rgba(79, 70, 229, 0.4);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+/* Utility Classes */
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-slide-in-left {
+    animation: slideInFromLeft 0.6s ease-out;
+}
+
+.animate-slide-in-right {
+    animation: slideInFromRight 0.6s ease-out;
+}
+
+.animate-pulse-slow {
+    animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-gradient-shift {
+    background-size: 300% 300%;
+    animation: gradient-shift 8s ease infinite;
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow {
+    animation: glow 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+}
+
+/* Custom Styles for Forms */
+.input-modern {
+    @apply border-2 border-gray-300 rounded-lg px-4 py-3 focus:border-indigo-500 focus:outline-none transition duration-200 focus:ring-2 focus:ring-indigo-200;
+}
+
+.btn-gradient {
+    @apply bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300 transform hover:scale-105;
+}
+
+.card-hover {
+    @apply transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-2;
+}
+
+.badge-priority-high {
+    @apply bg-red-100 text-red-800 px-4 py-1 rounded-full text-sm font-semibold;
+}
+
+.badge-priority-medium {
+    @apply bg-yellow-100 text-yellow-800 px-4 py-1 rounded-full text-sm font-semibold;
+}
+
+.badge-priority-low {
+    @apply bg-green-100 text-green-800 px-4 py-1 rounded-full text-sm font-semibold;
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Glass morphism effect */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Button transition */
+button {
+    @apply transition-all duration-300;
+}
+
+/* Link hover effect */
+a {
+    @apply transition-colors duration-300;
+}
+
+/* Input focus effect */
+input:focus,
+textarea:focus,
+select:focus {
+    @apply ring-2 ring-indigo-200;
+}
